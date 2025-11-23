@@ -1,3 +1,4 @@
+# Description: Custom login screen setup for xenodm in OpenBSD
 doas tee /etc/X11/xenodm/Xsetup_0 <<EOF
 #!/bin/sh
 # Setup background and clock for xenodm (wallpaper and clock on login screen)
@@ -8,7 +9,7 @@ exec_prefix="${prefix}"
 # ${exec_prefix}/bin/xsetroot -fg \#6f6f6f -bg \#bfbfbf -bitmap ${prefix}/include/X11/bitmaps/root_weave
 # Default xconsole (system logs - preserved)
 ${exec_prefix}/bin/xconsole -geometry 480x130-0-0 -daemon -notify -verbose -fn fixed -exitOnFail
-# Analog clock (uncommented - working!)
+# Analog clock (uncommented - working)
 xclock -analog -update 1 -padding 10 -bg "#1d2021" -fg "#ebdbb2" -geometry 200x200+50+50 &
 # Our wallpaper (replaces bitmap)
 /usr/local/bin/feh --bg-fill /usr/local/share/backgrounds/wallhaven-48yzd1.jpg
